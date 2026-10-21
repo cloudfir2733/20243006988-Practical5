@@ -3,6 +3,14 @@
     <!-- Launcher icon background -->
     <color name="ic_launcher_background">#FF000000</color>
 
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Municipality colour scheme -->
+    <color name="municipality_beijing">#FFC62828</color>
+    <color name="municipality_shanghai">#FFAD1457</color>
+    <color name="municipality_tianjin">#FF37474F</color>
+    <color name="municipality_chongqing">#FFF57C00</color>
+
+    <!-- Shared text and background colours -->
+    <color name="color_text_light">#FFFFFFFF</color>
+    <color name="color_text_dark">#FF212121</color>
+    <color name="color_default_background">#FFF5F5F5</color>
 </resources>
