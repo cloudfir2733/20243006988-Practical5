@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Summaries are stored in this exact order: Beijing, Shanghai, Chongqing, Tianjin.
+    Municipality.java maps the validated municipality name onto this order, so the
+    order of the items must not be changed without updating that mapping.
+-->
+<resources>
+    <string-array name="municipalities_array">
+        <item>Beijing has been the political centre of China for more than seven centuries and is the national capital of the People\'s Republic. The city spreads outward from the Forbidden City and Tiananmen Square along a series of concentric ring roads. As a direct-administered municipality it reports straight to the central government instead of to a province, and it hosts most national ministries, state companies and leading universities. Beijing staged the Summer Olympics in 2008 and the Winter Games in 2022, the first city to hold both. Its climate is continental, with cold dry winters and hot wet summers, and old hutongs still thread through the historic centre.</item>
+        <item>Shanghai lies at the mouth of the Yangtze River on the east coast of China and is the largest city and the financial centre of the country. Foreign trade was forced open here after 1842, and the Bund waterfront still keeps the banks and trading houses of that period. Pudong, farmland until the 1990s, now holds the stock exchange and a skyline crowned by towers such as the Oriental Pearl. Shanghai is a direct-administered municipality with a humid subtropical climate, a very busy container port and a reputation for shikumen lanes, art deco streets and a lively food culture.</item>
+        <item>Chongqing is a direct-administered municipality in southwest China and one of the fastest-growing urban economies in the country. It became a municipality in 1997, the most recent of the four, and covers a huge territory that mixes dense city districts with rural counties. The Yangtze and Jialing rivers meet in the centre, and steep hills give the city layered streets, long escalators and a night skyline often compared with Hong Kong. Chongqing is a major manufacturing base and the downstream anchor of the Three Gorges Dam, and its peppery hot pot is famous nationwide.</item>
+        <item>Tianjin is a direct-administered municipality in northern China, roughly 120 kilometres southeast of Beijing, and the biggest port city in the region. The Grand Canal and the Hai River meet here, which made the town a grain transport hub and, after 1860, a base for foreign concessions; the Five Great Avenues district still preserves hundreds of European-style villas. Tianjin is an important industrial centre for petrochemicals, aerospace and electronics, and the Binhai New Area has expanded rapidly since the 1990s. The city also hosts Tianjin University, founded in 1895 as the first modern university in China.</item>
+    </string-array>
+</resources>
