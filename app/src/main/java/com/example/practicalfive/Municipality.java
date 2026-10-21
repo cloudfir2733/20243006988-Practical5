@@ -1,4 +1,4 @@
-﻿package com.example.practicalfive;
+package com.example.practicalfive;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,13 +8,14 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 /**
- * Second screen: shows the municipality received from {@link MainActivity} together with its
- * image and the matching summary from {@code municipalities_array}.
+ * Second screen: shows the municipality received from {@link MainActivity}, styled with the
+ * matching colour resource, image and summary text.
  */
 public class Municipality extends AppCompatActivity {
 
@@ -54,11 +55,17 @@ public class Municipality extends AppCompatActivity {
         applyMunicipality(nameView, imageView, infoView);
     }
 
-    /** Fills the screen with the name, image and summary of the displayed municipality. */
+    /** Fills the screen with the colour, image and summary of the displayed municipality. */
     private void applyMunicipality(TextView nameView, ImageView imageView, TextView infoView) {
+        int colourResId = colourFor(municipalityName);
+        int textColourResId = textColourFor(municipalityName);
+
         nameView.setText(municipalityName);
+        nameView.setBackgroundColor(ContextCompat.getColor(this, colourResId));
+        nameView.setTextColor(ContextCompat.getColor(this, textColourResId));
 
         infoView.setText(summaryFor(municipalityName));
+        infoView.setTextColor(ContextCompat.getColor(this, colourResId));
 
         imageView.setImageResource(imageFor(municipalityName));
         imageView.setContentDescription(getString(R.string.cd_municipality_image, municipalityName));
@@ -68,6 +75,7 @@ public class Municipality extends AppCompatActivity {
     private void showMissingData(TextView nameView, ImageView imageView, TextView infoView) {
         nameView.setText(R.string.app_name);
         infoView.setText(R.string.error_missing_data);
+        infoView.setTextColor(ContextCompat.getColor(this, R.color.color_text_dark));
         imageView.setVisibility(View.GONE);
     }
 
@@ -79,6 +87,28 @@ public class Municipality extends AppCompatActivity {
             return "";
         }
         return summaries[index];
+    }
+
+    private int colourFor(String name) {
+        switch (name) {
+            case TextProcessor.BEIJING:
+                return R.color.municipality_beijing;
+            case TextProcessor.SHANGHAI:
+                return R.color.municipality_shanghai;
+            case TextProcessor.TIANJIN:
+                return R.color.municipality_tianjin;
+            case TextProcessor.CHONGQING:
+                return R.color.municipality_chongqing;
+            default:
+                return R.color.color_default_background;
+        }
+    }
+
+    /** White text on the dark accent colours, dark text on the bright orange. */
+    private int textColourFor(String name) {
+        return TextProcessor.CHONGQING.equals(name)
+                ? R.color.color_text_dark
+                : R.color.color_text_light;
     }
 
     private int imageFor(String name) {
