@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
-    Municipality screen: name header, city image and the scrollable summary.
-    Municipality.java fills every value at runtime, so the layout only provides
-    neutral defaults.
+    Municipality screen: coloured name header, city image, scrollable summary
+    and the Visit site button. MainActivity fills every value at runtime, so the
+    layout only provides neutral defaults.
 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,10 +17,10 @@
         android:id="@+id/textMunicipalityName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/color_default_background"
+        android:background="@color/municipality_beijing"
         android:gravity="center"
         android:padding="24dp"
-        android:textColor="@color/color_text_dark"
+        android:textColor="@color/color_text_light"
         android:textSize="30sp"
         android:textStyle="bold"
         tools:text="Beijing" />
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/cd_municipality_image"
+        android:contentDescription="@string/cd_main_image"
         android:scaleType="centerCrop" />
 
     <ScrollView
@@ -50,5 +50,16 @@
             tools:text="Beijing has been the political centre of China ..." />
 
     </ScrollView>
+
+    <Button
+        android:id="@+id/buttonVisitSite"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/municipality_beijing"
+        android:text="@string/visit_site"
+        android:textAllCaps="false"
+        android:textColor="@color/color_text_light"
+        android:textSize="16sp" />
 
 </LinearLayout>
