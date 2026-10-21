@@ -1,19 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!--
+    Main screen: title, illustrative image and the municipality input field.
+    The input is single line and uses the "Go" keyboard action; MainActivity
+    listens for that action so pressing Enter submits the value.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/color_default_background"
+    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textMainTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/main_title"
+            android:textColor="@color/color_text_dark"
+            android:textSize="26sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageMain"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginTop="20dp"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/cd_main_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/chinese_municipalities" />
+
+        <TextView
+            android:id="@+id/textInputLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:labelFor="@+id/editMunicipality"
+            android:text="@string/main_input_label"
+            android:textColor="@color/color_text_dark"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editMunicipality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:hint="@string/main_input_hint"
+            android:imeOptions="actionGo"
+            android:inputType="text"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/color_text_dark"
+            android:textSize="18sp"
+            tools:ignore="Deprecated" />
+
+        <TextView
+            android:id="@+id/textError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/municipality_beijing"
+            android:textSize="14sp"
+            android:visibility="gone"
+            tools:text="@string/error_invalid"
+            tools:visibility="visible" />
+
+    </LinearLayout>
+
+</ScrollView>
