@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Municipality screen: name header, city image and the scrollable summary.
+    Municipality.java fills every value at runtime, so the layout only provides
+    neutral defaults.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_default_background"
+    android:orientation="vertical"
+    tools:context=".Municipality">
+
+    <TextView
+        android:id="@+id/textMunicipalityName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_default_background"
+        android:gravity="center"
+        android:padding="24dp"
+        android:textColor="@color/color_text_dark"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:text="Beijing" />
+
+    <ImageView
+        android:id="@+id/imageMunicipality"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/cd_municipality_image"
+        android:scaleType="centerCrop" />
+
+    <ScrollView
+        android:id="@+id/scrollMunicipalityInfo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/textMunicipalityInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="4dp"
+            android:textColor="@color/color_text_dark"
+            android:textSize="16sp"
+            tools:text="Beijing has been the political centre of China ..." />
+
+    </ScrollView>
+
+</LinearLayout>

@@ -21,6 +21,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Municipality"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity" />
     </application>
 
 </manifest>
